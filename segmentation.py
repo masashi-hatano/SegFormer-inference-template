@@ -16,14 +16,12 @@ from utils.class_names import get_palette
 
 def parse_args():
     parser = ArgumentParser()
-    #parser.add_argument('--data_dir', default='/path/to/your_data_dir/')
-    parser.add_argument('--data_dir', default='/Users/masashi.hatano/Python/SegFormer-inference-template/data_dir')
-    #parser.add_argument('--save_dir', default='/path/to/output_dir/')
-    parser.add_argument('--save_dir', default='Users/masashi.hatano/Python/SegFormer-inference-template/output')
-    parser.add_argument('--batch_size', default=32)
+    parser.add_argument('--data_dir', default='/path/to/your_data_dir/')
+    parser.add_argument('--save_dir', default='/path/to/output_dir/')
+    parser.add_argument('--batch_size', default=1)
     parser.add_argument('--model', default='nvidia/segformer-b5-finetuned-cityscapes-1024-1024')
-    parser.add_argument('--device', default='cpu', help='Device used for inference')
-    parser.add_argument('--size', default=(2048, 1024), help='final output size of segmented img')
+    parser.add_argument('--device', default='cuda:0', help='Device used for inference')
+    parser.add_argument('--size', default=(1024, 2048), help='final output size of segmented img')
     parser.add_argument('--palette', default='cityscapes', help='Color palette used for segmentation map')
     args = parser.parse_args()
     return args
@@ -37,7 +35,7 @@ def main():
     # Dataset
     dataset = Dataset(args.data_dir)
     # DataLoader
-    dataloarder = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, num_workers=8)
+    dataloarder = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, num_workers=1)
 
     # model to device
     device = torch.device(args.device)
@@ -48,7 +46,7 @@ def main():
         # img: [B, C, H, W]
         b = img.shape[0]
         with torch.no_grad():
-            inputs_tensor = img
+            inputs_tensor = img.cuda()
             outputs = model(inputs_tensor)
             pred = outputs.logits
 
