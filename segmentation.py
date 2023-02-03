@@ -5,7 +5,6 @@ from transformers import SegformerForSemanticSegmentation
 import torch
 import numpy as np
 import cv2
-import numpy as np
 from torch.utils.data import DataLoader
 import tqdm
 
