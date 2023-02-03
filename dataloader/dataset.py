@@ -4,6 +4,7 @@ import cv2
 import torch
 import numpy as np
 
+
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, data_dir):
         super(Dataset, self).__init__()
