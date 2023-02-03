@@ -1,0 +1,4 @@
+mmcv==1.7.1
+opencv-python==4.6.0.66
+torch==1.10.1
+transformers==4.26.0
