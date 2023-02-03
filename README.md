@@ -34,3 +34,6 @@ You can choose a pre-trained segformer model from the following list, and design
   'nvidia/segformer-b0-finetuned-ade-512-512'
 ]
 ```
+
+# SegFormer
+See [this document](https://universal-swift-665.notion.site/SegFormer-Simple-and-Efficient-Design-for-Semantic-Segmentation-with-Transformers-a3e40f6fec5f470eb4a1fe8506c0d40e) if you want to learn more about the model
