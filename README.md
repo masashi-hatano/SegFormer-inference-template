@@ -5,7 +5,7 @@
   <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
   <a href="https://huggingface.co/"><img alt="Hugging Face" src="https://img.shields.io/badge/-huggingface-yellow"></a>
 
-In this repository, I implemented semantic segmentation inference code by using SegFormer model from hugging face.
+In this repository, I implemented semantic segmentation inference code by using SegFormer model from hugging face. I hope this repository will be helpful when preprocessing to mask an area.
   
 </div>
 
