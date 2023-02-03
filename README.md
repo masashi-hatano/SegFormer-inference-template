@@ -1,0 +1,1 @@
+# SegFormer-inference-template
